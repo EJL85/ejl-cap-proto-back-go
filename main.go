@@ -33,7 +33,7 @@ func handleRequests() {
 
 func main() {
 
-	//fmt.Println("Starting server")
+	fmt.Println("Starting server")
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", allInfo)
@@ -42,7 +42,9 @@ func main() {
 	// all origins accepted with simple methods (GET, POST). See
 	// documentation below for more options.
 	handler := cors.Default().Handler(mux)
+	fmt.Println("Listening on Port:3001")
 	http.ListenAndServe(":3001", handler)
+
 
 }
 
