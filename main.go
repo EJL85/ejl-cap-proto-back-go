@@ -39,7 +39,8 @@ func main() {
 	port := os.Getenv("PORT")
 
 	if port == "" {
-		log.Fatal("$PORT must be set")
+		port = "3001"
+		fmt.Println("Defaulting to port 3001")
 	}
 
 	fmt.Println(port)
