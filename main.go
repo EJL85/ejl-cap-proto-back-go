@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"encoding/json"
 	"github.com/rs/cors"
+	"os"
 )
 
 type Map struct {
@@ -34,6 +35,14 @@ func handleRequests() {
 func main() {
 
 	fmt.Println("Starting server")
+
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		log.Fatal("$PORT must be set")
+	}
+
+	fmt.Println(port)
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", allInfo)
