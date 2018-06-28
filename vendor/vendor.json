@@ -1,0 +1,19 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "W+IoIME5mgWjwU+dOlh3DZEZEN4=",
+			"path": "github.com/go-sql-driver/mysql",
+			"revision": "749ddf1598b47e3cd909414bda735fe790ef3d30",
+			"revisionTime": "2018-06-18T11:59:01Z"
+		},
+		{
+			"checksumSHA1": "XNmWIjMqYUL0qWEfRUi3X5rfYhw=",
+			"path": "github.com/rs/cors",
+			"revision": "694cf2ad010fcf91ee35161f5bfdad8f42ed1b9a",
+			"revisionTime": "2018-05-24T07:14:09Z"
+		}
+	],
+	"rootPath": "server"
+}
