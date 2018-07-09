@@ -1,9 +1,7 @@
 package main
 
 import (
-	"database/sql"
 	"log"
-	_ "github.com/go-sql-driver/mysql"
 	"fmt"
 	"net/http"
 	"encoding/json"
@@ -58,25 +56,7 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", allInfo)
 
-	// cors.Default() setup the middleware with default options being
-	// all origins accepted with simple methods (GET, POST). See
-	// documentation below for more options.
 	handler := cors.Default().Handler(mux)
 	fmt.Println("Listening on Port:3001")
 	http.ListenAndServe(GetPort(), handler)
-
-
-}
-
-
-
-func database() {
-	db, err := sql.Open("mysql",
-		"root:qazWSX1@@tcp(127.0.0.1:3306)/hello")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	defer db.Close()
-
 }
